@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Clash";
+    src: url("../../public/static/fonts/ClashDisplay-Variable.woff2") format("woff2"),
+         url("../../public/static/fonts/ClashDisplay-Variable.woff") format("woff"),
+         url("../../public/static/fonts/ClashDisplay-Variable.ttf") format("truetype");
+         font-weight: 200 700;
+         font-display: block;
+         font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes load {
+    0% {
+        transform: translateY(28px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+::selection {
+    @apply bg-purple-600 bg-opacity-90;
+}
+
+html,
+body,
+#__next {
+    @apply w-full h-full bg-black text-white;
+    scrollbar-color: white black;
+}
+
+.box-hover-effect {
+    position: relative;
+}
+
+.box-hover-effect::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: white;
+    border: 2px solid white;
+    @apply transition-all;
+}
+
+.box-hover-effect:hover::before {
+    background-color: transparent;
+}

@@ -1,0 +1,7 @@
+import React from "react"
+import { TransitionLayout } from "../components/TransitionLayout";
+import "../styles/global.css"
+
+export default function App({ Component, pageProps }) {
+    return <Component {...pageProps} />
+}
